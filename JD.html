@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>京东商品详细页</title>
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+main{
+	display:block;
+}
+body {
+	color: #666666;
+	font-size: 12px;
+	font-family: "微软雅黑";
+}
+.clearfix {
+	clear: both;
+}
+img {
+	display: inline-block;
+}
+a {
+	text-decoration: none;
+}
+/*鼠标经过事件*/
+li {
+	list-style: none;
+}
+/*通用下划线*/
+.hr {
+	border: 1px dotted #F2F2F2;
+	margin: 15px 5px 5px;
+}
+.hr5 {
+	border: 1px dotted #F2F2F2;
+	margin: 10px 5px;
+}
+.hair {
+	background: rgba(247,247,247,.9);
+	height: 30px;
+	width: 100%;
+	font-size: 12px;
+	color: #666666;
+}
+.hair-box {
+	width: 1210px;
+	margin: 0 auto;
+	height: 30px;
+	line-height: 30px;
+}
+.hair-box img {
+	vertical-align: middle;
+}
+.hairleft, .hairleft li {
+	float: left;
+}
+.hairleft img {
+	margin: -6px 4px 0;
+}
+@keyframes fly1 {
+ from {
+ transform:rotate(0deg);
+}
+to {
+	transform: rotate(180deg);
+}
+}
+.hair_right li:hover img[src="images/jt_down.jpg"], div:hover img[src="images/jtr.jpg"] {
+	animation: fly1 .2s linear forwards;
+}
+.hairleft_1 {
+	color: #7c7770;
+}
+.heirleft ul li a {
+	list-style: none;
+	color: #7C7770;
+}
+.hair_right {
+	float: right;
+}
+.hair_right li {
+	float: left;
+	height: 28px;
+	line-height: 28px;
+}
+.hair_right li:last-child {
+	background-color: #FFFFFF;
+}
+.hair_right li a {
+	list-style: none;
+	color: #7C7770;
+	margin: 0 4px;
+}
+/*标题end*/
+header {
+	width: 1212px;
+	height: 90px;
+	margin: 0 auto;
+	margin-top: 10px;
+	color: #999;
+}
+.logo {
+	width: 270px;
+	height: 60px;
+	float: left;
+	overflow: hidden;
+}
+.search {
+	float: left;
+	width: 500px;
+	height: 40px;
+	line-height: 36px;
+	margin-top: 5px;
+	margin-left: 54px;
+}
+.searchtext {
+	height: 30px;
+	width: 413px;
+	float: left;
+	line-height: 30px;
+	border: 3px solid #E4393C;
+}
+.searchimage {
+	width: 78px;
+	height: 40px;/*background: #E4393C;
+	font-size: 16px;
+	color: #FFF;
+	text-align: center;
+	line-height: 38px;
+	float: left;
+	border: 0;*/
+}
+header .search input {
+	outline: none;/*屏蔽边框高亮显示*/
+}
+.logo_middletext {
+	width: 500px;
+	line-height: 8px;
+}
+.logo_middletext ul li {
+	float: left;
+	color: #999;
+	margin-right: 8px;
+}
+.logo_middletext ul li a {
+	color: #999;
+}
+.logo_right {
+	margin-left: 77px;
+	width: 300px;
+	float: left;
+	overflow: hidden;
+}
+.logo_right a {
+	margin-left: 12px;
+}
+/*nav设置*/
+nav {
+	width: 1212px;
+	height: 40px;
+	border: 1px #FFFF00 solid;
+	margin: 0 auto;
+	font-size: 14px;
+}
+.shopclass {
+	width: 210px;
+	height: 40px;
+	background: #CD2A2C;
+	float: left;
+	line-height: 40px;
+	text-indent: 18px;
+	color: #FFF;
+}
+.shopclasslist {
+	position: absolute;
+	display: none;
+	width: 210px;
+	height: 400px;
+	z-index: 30;
+	background: #CD2A2C;
+}
+.shopclasslist a {
+	font-size: 16px;
+	color: #fff;
+}
+.shopclass:hover .shopclasslist {
+	display: block;
+}
+.shopclass img {
+	float: right;
+	margin: 16px 6px 0 0;
+}
+.nav_list {
+	width: 100%;
+	height: 40px;
+	/*background:rgba(230,67,70,0.8);*/
+	background: #E64346;
+}
+.nav_list ul li {
+	float: left;
+	width: 85px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.nav_list ul li a {
+	color: #FFF;
+}
+/*nav结束*/
+article {
+	width: 1212px;
+	margin: 0 auto;
+	color: #666666;
+	font-size: 14px;
+}
+.shopform {
+	margin: 10px 0;
+}
+section {
+	margin: 10px 0;
+}
+section a {
+	color: #666666;
+	font-size: 12px;
+	margin: 0 4px;
+}
+section a:first-child {
+	font-size: 19px;
+	font-weight: bold;
+}
+.articleleft {
+	width: 370px;
+	float: left;
+}
+.lookpic {
+	width: 352px;
+	height: 352px;
+	border: 1px #999 solid;
+	background: url(images/loading.gif) no-repeat center;
+	overflow: hidden;
+	margin-bottom: 6px;
+}
+.scroolpic ul li {
+	float: left;
+	width: auto;
+	height: 50px;
+	margin-left: 9px;
+	margin-left:5px\9;
+	border: 1px #999 solid;
+}
+.scroolpic ul li a {
+	display: inline-block;
+}
+.scroolpic ul li:first-child {
+	margin: 0;
+}
+.scroolpic ul li:first-child a {
+	display: block;
+	width: 17px;
+	height: 50px;
+	background: url(images/iconlist_1.png) no-repeat 0 -140px;
+}
+.scroolpic ul li:last-child a {
+	display: block;
+	width: 17px;
+	height: 50px;
+	background: url(images/iconlist_1.png) no-repeat -85px -140px;
+}
+.scroolpicbottom {
+	margin-top: 18px;
+	float: left;
+}
+.scroolpicbottom ul li {
+	float: left;
+	font-size: 12px;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #DDDDDD;
+}
+.scroolpicbottom ul li:first-child {
+	width: 87px;
+	height: 25px;
+	background: url(images/iconlist_1.png) no-repeat -1px -287px;
+	border-radius: 3px;
+}
+.scroolpicbottom ul li:first-child a {
+	margin-left: 30px;
+	color: #000;
+}
+.scroolpicbottom ul li:nth-child(2) {
+	margin-left: 5px;
+	background: #F5F5F5;
+	width: 93px;
+	border-radius: 3px;
+}
+.scroolpicbottom ul li:nth-child(2) input {
+	/*width:93px;
+	height:21px;
+	background:url(images/iconlist_3.png) no-repeat 0 -400px;*/
+	vertical-align: middle;
+	margin-left: 16px;
+	margin-right: 3px;
+}
+.scroolpicbottom ul li:nth-child(3) {
+	width: 160px;
+	height: 26px;
+	border: 1px solid #DDDDDD;
+	border-right: none;
+	margin-left: 16px;
+	text-indent: 7px;
+}
+.scroolpicbottom ul li:nth-child(3) a {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 6px
+}
+.scroolpicbottom ul li:nth-child(3) .a1 {
+	width: 18px;
+	height: 18px;
+	background: url(images/iconlist_1.png) no-repeat -192px -145px;
+}
+.scroolpicbottom ul li:nth-child(3) .a2 {
+	width: 18px;
+	height: 18px;
+	background: url(images/iconlist_1.png) no-repeat -104px -146px;
+}
+.scroolpicbottom ul li:nth-child(3) .a3 {
+	width: 18px;
+	height: 18px;
+	background: url(images/iconlist_1.png) no-repeat -148px -146px;
+}
+.scroolpicbottom ul li:nth-child(3) .aright {
+	float: right;
+}
+.articleright {
+	width: 830px;
+	float: left;
+	margin-left: 10px;
+}
+.articleright_top {
+	border-bottom: #CCC dotted 1px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.articleright_top h4 {
+	font-weight: bold;
+	font-family: "微软雅黑";
+	line-height: 24px;
+	font-size: 18px;
+}
+.articleright_top h4:last-child {
+	color: #E4393C;
+}
+/*通用价格
+*/.price {
+	color: #E4393C;
+	font-weight: bolder;
+	font-size: 18px;
+}
+.bule {
+	color: #005AA0;
+}
+.articleright_middle {
+	width: 600px;
+	height: 166px;
+	border-bottom: 1px dotted #ccc;
+	text-indent: 1.5em;
+}
+.articleright_middle ul li {
+	line-height: 30px;
+}
+.articleright_middle ul li input {
+	outline: none;
+}
+.articleright_middle ul li a:last-child {
+	vertical-align: middle;
+	margin-left: 10px;
+	display: inline-block;
+	background: url(images/words.png) no-repeat;
+	color: #CCC;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	width: 86px;
+	padding-left: 8px;
+}
+.articleright_middle ul .address select {
+	outline: none;
+	color: #666;
+}
+.articleright_middle ul .address, .articleright_middle ul li:last-child {
+	text-indent: 2rem;
+}
+.articleright_middle ul li:last-child i {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 8px;
+}
+.articleright_middle ul li:last-child i:first-child {
+	background: url(images/promise.png) no-repeat 0 -64px;
+	width: 78px;
+	height: 16px;
+}
+.articleright_middle ul li:last-child i:nth-child(2) {
+	background: url(images/promise.png) no-repeat 0 -576px;
+	width: 80px;
+	height: 16px;
+}
+.articleright_middle ul li:last-child i:nth-child(3) {
+	background: url(images/promise.png) no-repeat 0 -319px;
+	width: 46px;
+	height: 16px;
+}
+.articleright_middle ul .address b {
+	font-size: 15px;
+}
+.articleright_middle ul li span {
+	margin-left: 6px;
+}
+.articleright_bottom {
+	text-indent: 1.5em;
+	margin-top: 10px;
+}
+.articleright_bottom ul li {
+	margin-top: 10px;
+}
+.articleright_bottom a {
+	display: inline-block;
+	border: 1px solid #ccc;
+	color: #666;
+	font-size: 12px;
+	vertical-align: middle;
+	line-height: 24px;
+	margin-left: 5px;
+}
+.articleright_bottom .product1 {
+	width: 63px;
+	height: 24px;
+	border: 2px solid #E4393C;
+	background: url(images/products/p_icon_01.jpg) no-repeat;
+	padding-left: 10px;
+	position: relative;
+}
+.articleright_bottom .product2 {
+	width: 86px;
+	height: 24px;
+	border: 1px solid #ccc;
+	background: url(images/products/p_icon_01.jpg) no-repeat;
+	padding-left: 10px;
+	position: relative;
+}
+.pick {
+	display: none;
+	position: absolute;
+	background: url(images/iconlist_1.png) no-repeat -197px -221px;
+	width: 16px;
+	height: 16px;
+	outline-width: 2px;
+	right: 0;
+	bottom: 0;
+}
+.articleright_bottom .product1:active .pick, .articleright_bottom .product2:active .pick {
+	display: block;
+}
+input[name=add] {
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	margin: 0 4px;
+}
+input[name=amount] {
+	width: 35px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px\9;
+}
+.color_red {
+	color: #E4393C;
+	font-weight: bold;
+}
+.buyshopcar a:nth-child(1) {
+	background: url(images/iconlist_3.png) 0 0 no-repeat;
+	width: 133px;
+	height: 36px;
+}
+.buyshopcar a:nth-child(2) {
+	background: url(images/iconlist_3.png) 0 -262px no-repeat;
+	width: 89px;
+	height: 34px;
+}
+.buyshopcar a:nth-child(3) {
+	background: url(images/iconlist_3.png) 0 -308px no-repeat;
+	width: 70px;
+	height: 34px;
+}
+.buyshopcar a:nth-child(4) {
+	width: 172px;
+	height: 53px;
+}
+.buyshopcar a:nth-child(4) i {
+	background: url(images/iconlist_4.png) 0 0 no-repeat;
+	width: 60px;
+	height: 40px;
+	display: inline-block;
+	float: right;
+	margin-right: 7px;
+	margin-top: 3px;
+}
+.buyshopcar a:nth-child(4) span {
+	margin-left: 2em;
+}
+/*scroolpic 结束*/
+
+.main_box {
+	width: 1212px;
+	height: 40px;
+	margin: 15px auto;
+}
+.main_box a {
+	color: #666666;
+}
+aside {
+	float: left;
+	width: 210px;
+}
+.asideclass {
+	border: 1px solid #DDDDDD;
+	width: 208px;
+	height: 130px;
+	margin-bottom: 10px;
+	text-indent: 1em;
+}
+.ptop {
+	width: 208px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	background-color: #F7F7F7;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 5px;
+}
+.asideclass li {
+	float: left;
+	width: 90px;
+	height: 25px;
+	line-height: 25px;
+	margin-left: 5px;
+}
+.asidepinpai {
+	text-indent: 1em;
+}
+.asidepinpai li {
+	float: left;
+	width: 60px;
+	height: 25px;
+	line-height: 25px;
+	margin-left: 5px;
+}
+.userbuy, .haigoumai {
+	text-align: center;
+	text-indent: 1em;
+	border: 1px solid #DDDDDD;
+}
+.userbuy img, .haigoumai img {
+	width: 100px;
+	height: 100px;
+}
+.small_title {
+	background: #F7F7F7;
+}
+.asidepinpai {
+	border: 1px solid #DDDDDD;
+	width: 208px;
+	height: 207px;
+	margin-bottom: 10px;
+}
+.userbuy {
+	border: 1px solid #DDDDDD;
+	width: 208px;
+	height: 724px;
+	margin-bottom: 10px;
+}
+.userbuy dd {
+	height: 24px;
+	line-height: 24px;
+}
+.ranking {
+	width: 208px;
+	height: 350px;
+	border: 1px solid #DDDDDD;
+	margin-bottom: 10px;
+}
+.floatleft {
+	float: left;
+	width: 60px;
+	height: 24px;
+	border: 1px #DEDFDE solid;
+	border-bottom: 1px #FFF solid;
+	margin-left: 5px;
+	z-index: 20;
+	text-align: center;
+	line-height: 24px;
+	background: #f7f7f7;
+}
+.rankinglist {
+	margin-left: -73px;
+	width: 208px;
+	line-height: 18px;
+	border-top: 1px #f7f7f7 solid;
+	display: block;
+}
+.rankinglist1 {
+	margin-top: -1px;
+	width: 208px;
+	line-height: 18px;
+	margin-left: -3px;
+	display: none;
+	border-top: 1px #f7f7f7 solid;
+	z-index: 30;
+}
+.rankinglist2 {
+	margin-top: -1px;
+	margin-left: -142px;
+	width: 208px;
+	line-height: 18px;
+	display: none;
+	border-top: 1px #f7f7f7 solid;
+	z-index: 20;
+}
+/*简单设计*/
+.i_number {
+	display: inline-block;
+	font-style: normal;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	border: 1px solid #E4393C;
+	text-align: center;
+	color: #E4393C;
+	float: left;
+	margin-left: 5px;
+}
+.i_numberlast {
+	display: inline-block;
+	font-style: normal;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	border: 1px solid #EBEBEB;
+	text-align: center;
+	color: #EBEBEB;
+	float: left;
+	margin-left: 5px;
+}
+.ranking dt {
+	float: left;
+}
+.ranking dd {
+	margin-left: 85px;
+}
+.floatleft_1{
+	background:#FFF;<br>
+	border-botttom:2px solid #FFF;
+}
+.floatleft_1:hover .rankinglist {
+	display: block;
+}
+/*经过.floatleft1_1*/
+.floatleft1_1:hover .rankinglist {
+	display: none;
+}
+.floatleft1_1:hover .rankinglist1 {
+	display: block;
+}
+/*经过.floatleft2_1*/
+.floatleft2_1:hover .rankinglist {
+	display: none;
+}
+.floatleft2_1:hover .rankinglist2 {
+	display: block;
+}
+/*无效无法隐藏*/
+
+.products_bottom dt {
+	margin: 14px 0;
+}
+main {
+	float: left;
+	width: 988px;
+	margin-left: 12px;
+}
+.main1 {
+	width: 988px;
+	height: 236px;
+	border: 1px solid #DDDDDD;
+	border-top: 2px solid #999999;
+}
+.main1 dl dt {
+	line-height: 21px;
+}
+.mainptop {
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	background-color: #F7F7F7;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 5px;
+	text-indent: 1em;
+}
+.bold {
+	color: black;
+	font-weight: bold;
+}
+.taozhuang dl {
+	float: left;
+	width: 137px;
+	margin-left: 17px;
+}
+.taozhuang .plusbox {
+	width: 30px;
+	text-align: center;
+	margin-top: 40px;
+	margin-left: -17px;
+	float:left;
+}
+.plus {
+	background: url(images/iconlist_1.png) no-repeat 0 -255px;
+	width: 26px;
+	height: 29px;
+}
+.taozhuangright dd {
+	margin-left: 32px;
+}
+.denghao {
+	background: url(images/iconlist_1.png) no-repeat -26px -255px;
+	width: 29px;
+	height: 29px;
+	float: left;
+	margin-top: 40px;
+}
+.taozhuangright input {
+	background: url(images/iconlist_1.png) no-repeat -166px -112px;
+	width: 77px;
+	height: 24px;
+	outline: none;
+	border: #E53E41;
+	color: #FFF;
+	margin: 10px 0;
+}
+.tuijianbox{
+	border:1px solid  #DDDDDD;
+	width:988px;
+	height:290px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border:#DDDDDD 1px solid;
+	box-sizing:border-box;
+}
+.tuijiansmallbox{
+	border-top:2px solid #999999;
+	height:27px;
+	background:#F7F7F7;
+	border-bottom: 1px solid #DDDDDD;
+	
+}
+.tuijian{
+	border-top:solid 2px #E53E41;
+	margin-top:-6px;
+	width:79px;
+	height:28px;
+	line-height:28px;
+	background:#FFF;
+	float:left;
+	
+}
+.tuijian1{
+	width:988px;
+	float:left;
+}
+.tuijian1 ul li{
+	float:left;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+} 
+.tuijian1 ul li:first-child a{
+	color:#000;
+	font-weight:bolder;
+}
+.tuijian1 ul li a{
+	color:#005AA0;
+}
+.tuijian1 ul li span{
+	margin:0 10px;
+}
+.tuijianxiangqing{
+	margin:30px 0;
+	width:988px;
+}
+.tuijianxiangqing dl{
+	float:left;
+	width: 137px;
+	margin-left: 10px;
+}
+.tuijianxiangqing dl dd{
+	line-height:20px;
+}	
+.tuijianxiangqing .plusbox{
+	width: 30px;
+	text-align: center;
+	margin-top: 40px;
+	margin-left: -17px;
+}
+.selectlist{
+	width:610px;
+	height:auto;
+	overflow-x:scroll;
+	float:left;
+}
+.tuijianxiangqing input[name=buy ]{
+	background: url(images/iconlist_1.png) no-repeat -166px -112px;
+	width: 77px;
+	height: 24px;
+	outline: none;
+	border: #E53E41;
+	color: #FFF;
+	margin: 10px 0;
+}
+.tuijianright{
+	padding-left:40px;
+}
+.tuijianright dd{
+	margin-left:35px;
+}
+.renqi{
+	float:left;
+	height:27px;
+	line-height:27px;
+	border-left: 1px solid #DDDDDD;
+}
+/*介绍*/
+.jieshao{
+	border:1px solid #ddd;
+	height:147px;
+}
+.jieshaobox{
+	width:988px;
+	border-top:2px solid #999;
+	border:1px solid #ddd;
+	background:#f7f7f7;
+	height:30px;
+	line-height:30px;
+}
+.jieshaobox div{
+	float:left;
+	background-color: #F7F7F7;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	padding:0 10px;
+}
+.jieshaobox  div:first-child {
+	color:#E4393C;
+	background:#FFF;
+	margin-top:-4px;
+	padding-top:4px;
+	border-top:#E4393C solid 2px;
+}
+.jieshaobox  span{
+	font-size:16px;
+}
+.shangpinjieshao{
+	background:#FFF;
+	
+}	
+.jieshaobox .jieshaoright{
+	float:right;
+}
+.jieshaoright input{
+	background:url(images/iconlist_3.png) no-repeat 0 -46px;
+	width:104px;
+	height:30px;
+	outline:none;
+	margin-top:5px;
+	padding-bottom:5px;
+	border:0;
+	}
+	.shangpinjieshao_ul{
+		margin-top:20px;
+	}
+	
+.shangpinjieshao_ul li{
+	 float:left;
+	width:320px;
+	height:24px;
+	line-height:24px;
+	text-indent:1em;
+}
+/*<end>*/
+.fieldset{
+	margin-left:118px;
+	width:752px;
+}
+
+.font20{
+	color:#C90014;
+	font-size:20px;
+	font-weight:lighter;
+}
+.legend{
+	width:750px;
+	height:44px;
+	background:url(images/iconlist_6.png) no-repeat 0 -95px;
+	
+}
+.jieshi img{
+	float:left;
+}
+.jieshi ol{
+	margin-left:340px;
+}
+.jieshi ol li:first-child{
+	font-size:14px;
+	font-weight:bold;
+	color:#666666;
+}
+.jieshi ol li{
+	height:20px;
+	line-height:20px;
+}
+.shangbiao img{
+	float:left;
+}
+.shangbiao p{
+	margin-left:175px;
+}
+.quanli p{
+	height:24px;
+	line-height:24px;
+}
+/*end*/
+
+.shangpinpingjia{
+	height:140px;
+	border:1px solid #ddd;
+	border-top:2px solid #666;
+}
+.shangpinpingjia p{
+	font-size:14px;
+	margin:10px 0 0 10px;
+}
+.shangpinpingjia dl{
+	float:left;
+}
+.dl1{
+	margin:20px 50px;
+}
+.dl1 dd{
+	text-align:center;
+}
+.dl2 {
+	width:176px;
+	margin-top:20px;
+	margin-right:20px;
+}
+.dl2 dd{
+	height:20px;
+	line-height:20px;
+}
+.dl2 progress,.dl2 meter{
+	width:100px;
+	color:#CF0000;
+	-moz-color:#CF0000;
+	-ms-color:#CF0000;
+	-o-color:#CF0000;
+	-webkit-color:#CF0000;
+}
+.dl3{
+
+	width:409px;
+	height:92px;
+	padding-left:20px;
+	border-left:1px solid #E4E4E4;
+	border-right:1px solid #E4E4E4;
+}
+.dl3 dd{
+	background:#FDEDD2;
+	margin:5px 0 0 5px;
+	display:inline-block;
+	height:20px;
+
+	line-height:20px;
+}
+.dl4{
+	margin-left:30px;
+}
+.dl4 dd{
+	height:26px;
+	line-height:26px;}
+.dl4 dd input{
+	width:112px;
+	height:26px;
+	background:#ECF7E3;
+	border-radius:5px;
+}/*
+end*/
+.pingjia{
+	border:1px solid #ddd;
+	border-top:2px solid #999;
+	background:##FCFFFA;
+	height:30px;
+	line-height:30px;
+	margin-top:20px;
+}
+.pingjia div{
+	float:left;
+	font-size:16px;
+	margin-left:13px;
+	
+}
+.pingjia div:first-child{
+	background:#FFF;
+	margin-top:-4px;
+	border-top:2px solid #CF0000;
+	border-bottom:none;
+	margin-left:0;
+}
+.userping{
+	width:845px;
+	margin-left:120px;
+	padding:10px;
+	margin-top:20px;
+	border:1px solid #ddd;
+}
+.userping dl{
+	float:left;
+	margin-left:-100px;
+	margin-top:15px;
+	text-align:center;
+}
+.userping dl dd{
+	height:20px;
+}
+.userping p{
+	height:20px;
+	line-height:20px;
+}
+.imgmiddle{
+	height:93px;
+}
+.imgmiddle img{
+	vertical-align:top;
+	margin-left:10px;
+}
+
+.butn{
+	float:right;
+}
+.butn a{
+	display:inline-block;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	border-radius:5px;
+	border:1px solid #CCC;
+	padding:5px 20px;
+	margin-left:10px;
+}
+.butn a:first-child{
+	border:none;
+	color:red;
+}
+
+.zixun{
+	width:988px;
+	margin-top:20px;
+	background:#F7F7F7;
+}
+.zixun div:first-child{
+	background:#FFF;
+	border-top:2px #E4393C solid;
+	margin-top:-4px;
+	padding-bottom:4px;
+}
+.zixun div{
+	float:left;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	padding:0 5px;
+	font-size:14px;
+	background:#f7f7f7;
+}
+.fabiaozixun{
+	float:right;
+}
+.zixunbottom{
+	width:988px;
+	border:1px solid #ddd;
+	border-top:none;
+	clear:both;
+}
+
+.footerimg img{
+	
+margin:30px;
+}
+
+.footertop{
+	width:1212px;
+	height:140px;
+	padding-top:20px;
+	margin:0 auto;
+	border-top:2px solid #999999;
+	border-bottom:2px solid #999999;
+}
+.footerdl{
+	width:140px;
+	float:left;
+	margin-left:90px;
+}
+.footerdl dd{
+	float:left;
+}
+.footerdl dt{
+	margin-left:50px;
+}
+.footerdl dt a{
+	color:#666666;
+}
+.footerdl dt:nth-child(2) {
+	font-size: 16px;
+	font-weight: bold;
+}{
+	font-size:16px;
+	font-weight:bold;
+	color:#CCC;
+}
+
+.footerbottom{
+	text-align:center; 
+	width:1212px; 
+	margin:0 auto;
+	margin-top:20px;
+}
+.footerbottom span{
+	margin:0 5px;
+}
+
+.home{
+	position:fixed;
+	top:450px;
+	right:0;
+	width:30px;
+}
+.home p{
+	width:20px;
+	height:90px;
+	background:#F7F7F7;
+	margin-top:10px;
+}
+.home1{
+	display:inline-block;
+	width:18px;
+	height:18px;
+	background:url(images/iconlist_2.png) no-repeat 0 -219px;
+	padding-top:13px;
+}
+.home2{
+	display:inline-block;
+	width:18px;
+	height:18px;
+	background:url(images/iconlist_2.png) no-repeat -21px -219px;
+	padding-top:13px;
+}
+</style>
+</head>
+<body>
+<div class="hair">
+  <div class="hair-box">
+    <ul class="hairleft">
+      <li><img src="images/star.jpg"></li>
+      <li><a href="#" class="hairleft_1">收藏京东</a></li>
+    </ul>
+    <ul class="hair_right">
+      <li>您好，欢迎来到京东！</li>
+      <li><a href="">[登录]</a></li>
+      <li><a href="#">[免费注册]</a><span>|</span></li>
+      <li><a href="#">我的订单</a><span>|</span></li>
+      <li><a href="#"></a><a href="#"><img src="images/vip.jpg"></a><a href="#">会员俱乐部</a><span>|</span></li>
+      <li><a href="#"></a><a href="#"><img src="images/dakehu.jpg"></a><a href="#">企业频道</a><span>|</span></li>
+      <li><a href="#"><img src="images/phone.jpg"></a><a  href="#">手机京东</a><a href="#"><img src="images/jt_down.jpg" class="rotate180"></a><span>|</span></li>
+      <li><a href="#">客户服务</a><a href="#"><img src="images/jt_down.jpg"></a><span>|</span></li>
+      <li><a href="#">网站导航</a><a href="#"><img src="images/jt_down.jpg"></a></li>
+    </ul>
+  </div>
+</div>
+<header class="clearfix">
+  <div class="logo"><img src="images/logo-201305.png" alt="京东logo" title="进入京东"></div>
+  <div class="search">
+    <input type="text" value="" class="searchtext">
+    <input type="image" value=" " src="images/search.jpg">
+    <div class="logo_middletext">
+      <ul>
+        <li><a href="#">热门搜索&nbsp;:</a></li>
+        <li><a href="#">家纺11月大促</a></li>
+        <li><a href="#">彩虹电热毯</a></li>
+        <li><a href="#">博洋家纺</a></li>
+        <li><a href="#">霞珍</a></li>
+        <li><a href="#">床垫床褥</a></li>
+        <li><a href="#">九州鹿被子</a></li>
+        <li><a href="#">南极人家纺</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--seerch end-->
+  <div class="logo_right"> 
+    <!--<div><a href="#" class="smallman"></a><a href="#">我的京东</a></div>
+        <div><a href="#" class="smallcar"<a href="#">去购物车结算</a><a href=""></a></div>--> 
+    <a href="#"><img src="images/jd.jpg"></a> <a href="#"><img src="images/gwc.jpg"></a> </div>
+</header>
+<nav class="clearfix">
+  <div class="shopclass">全部商品分类<img src="images/jtr.jpg">
+    <div class="shopclasslist">
+      <ul>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+        <li><a href="#">京东自营商店</a><img src="images/youjiantou.png"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav_list">
+    <ul>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">服装城</a></li>
+      <li><a href="#">食品</a></li>
+      <li><a href="#">团购</a></li>
+      <li><a href="#">夺宝岛</a></li>
+      <li><a href="#">闪购</a></li>
+      <li><a href="#">金融</a></li>
+    </ul>
+  </div>
+</nav>
+<article id="shopform">
+  <section> <a href="#">家居家装</a><a href="#">清洁用品</a><span>&gt;</span><a href="#">衣物清洁</a><span>&gt;</span><a href="#">卫新</a><span>&gt;</span><a href="#">卫新洗衣液</a> </section>
+  <div class="articleleft">
+    <div class="lookpic">
+      <ul>
+        <li><img src="images/products/product-s1-m.jpg" alt=""></li>
+        <li><img src="images/products/product-s3-m.jpg" alt=""></li>
+        <li><img src="images/products/product-s2-m.jpg" alt=""></li>
+        <li><img src="images/products/product-s4-m.jpg" alt=""></li>
+        <li><img src="images/products/product-s1-m.jpg" alt=""></li>
+      </ul>
+    </div>
+    <div class="scroolpic">
+      <ul>
+        <li><a href="#"></a></li>
+        <li><a href="#"><img src="images/products/product-s1.jpg"></a></li>
+        <li><a href="#"><img src="images/products/product-s2.jpg"></a></li>
+        <li><a href="#"><img src="images/products/product-s3.jpg"></a></li>
+        <li><a href="#"><img src="images/products/product-s4.jpg"></a></li>
+        <li><a href="#"><img src="images/products/product-s1.jpg"></a></li>
+        <li><a href="#"></a></li>
+      </ul>
+    </div>
+    <div class="clearfix scroolpicbottom" >
+      <ul>
+        <li><a href="#">查看大图</a></li>
+        <li>
+          <input type="checkbox">
+          加入对比</li>
+        <li><span>分享到：</span><a href="#" class="a1"></a><a href="#" class="a2"></a><a href="#" class="a3"></a><a href="#" class="aright">|<b>&gt;</b>|</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--  articleleft end-->
+  <div class="articleright">
+    <div class="articleright_top">
+      <h4>卫新 薰衣草洗衣液4.26kg</h4>
+      <h4>与威露士一起巩固健康生活</h4>
+    </div>
+    <div class="articleright_middle">
+      <ul>
+        <li>京&nbsp;东&nbsp;价:<span class="price">￥39.90</span><span class="bule">(降价通知)</span></li>
+        <li>商品编号：<span>960148</span></li>
+        <li>商品评分：
+          <input type="image" src="images/star_button.fw.png" value=" ">
+          <input type="image" src="images/star_button.fw.png" value=" ">
+          <input type="image" src="images/star_button.fw.png" value=" ">
+          <input type="image" src="images/star_button.fw.png" value=" ">
+          <input type="image" src="images/star_button.fw.png">
+          <span class="bule">(已有47662人评价)</span><a href="#">留言咨询</a></li>
+        <li class="address">配送至：
+          <select>
+            <option value="1">北京海淀区大钟寺</option>
+            <option value="2">北京昌平区国风美堂</option>
+            <option value="3">北京昌平区小辛庄</option>
+            <option value="3">北京霍营</option>
+            <option value="3">北京回龙观</option>
+          </select>
+          <b>有货</b>，23:00前完成下单，预计<b>明日（12月06日）</b>送达</li>
+        <li>服&nbsp;务:由 京东 发货并提供售后服务。支持：<i></i><i></i><i></i></li>
+      </ul>
+    </div>
+    <div class="articleright_bottom">
+      <ul>
+        <li>选择颜色：<a class="product1">薰衣草<span class="pick"></span></a><a  class="product2">索菲亚玫瑰<span class="pick"></span></a> </li>
+        <li class="amount">购买数量：<!--选择数量amount-->
+          <input type="button" value="-" name="add">
+          <input type="text" name="amount" value="1">
+          <input type="button" name="add"  value="+">
+        </li>
+        <li class="color_red"><!--已选择-->已选择<strong>"薰衣草";"4.26kg"</strong></li>
+        <li class="buyshopcar"><a href="#"></a><a href="#"></a><a href="#"></a><a href="#">客户端首次下单<i></i><br>
+          <span class="color_red">送京东劵</span></a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+<div class="clearfix"></div>
+<div class="clearfix main_box">
+<aside>
+  <ul class="asideclass">
+    <p class="ptop"><a href="#">相关分类</a></p>
+    <li><a href="#">纸巾湿巾</a></li>
+    <li><a href="#">衣物清洁</a></li>
+    <li><a href="#">清洁工具</a></li>
+    <li><a href="#">驱虫用品</a></li>
+    <li><a href="#">家庭清洁</a></li>
+    <li><a href="#">皮具护理</a></li>
+    <li><a href="#">一次性用品</a></li>
+  </ul>
+  <ul class="asidepinpai clearfix">
+    <p class="ptop">同类其他品牌</p>
+    <li><a href="#">蓝月亮</a></li>
+    <li><a href="#">汰渍</a></li>
+    <li><a href="#">威露士</a></li>
+    <li><a href="#">奥妙</a></li>
+    <li><a href="#">卫新</a></li>
+    <li><a href="#">碧浪</a></li>
+    <li><a href="#">金纺</a></li>
+    <li><a href="#">立白</a></li>
+    <li><a href="#">白猫</a></li>
+    <li><a href="#">洛娃</a></li>
+    <li><a href="#">滴露</a></li>
+    <li><a href="#">亮净</a></li>
+    <li><a href="#">卫洁士</a></li>
+    <li><a href="#">可柔可顺</a></li>
+    <li><a href="#">妈妈壹选</a></li>
+    <li><a href="#">纳爱斯</a></li>
+    <li><a href="#">好爸爸</a></li>
+    <li><a href="#">绿伞</a></li>
+    <li><a href="#">净安</a></li>
+    <li><a href="#">地球</a></li>
+    <li><a href="#"></a></li>
+  </ul>
+  <dl class="clearfix userbuy">
+    <p class="ptop">浏览了该商品的用户最终购买</p>
+    <dt><img src="images/products/p001.jpg"></dt>
+    <dt><a href="#">卫新&nbsp;护色洗衣液2kg袋装</a>
+      </dd>
+    <dd class="color_red">￥22.90</dd>
+    <hr class="hr">
+    <dt><img src="images/products/p002.jpg"></dt>
+    <dd><a href="#">卫新&nbsp;护色洗衣液2kg袋装</a></dd>
+    <dt class="color_red">￥39.90</dt>
+    <hr class="hr">
+    <dt><a href="#"><img src="images/products/p004.jpg"></a></dt>
+    <dd><a href="#">卫新&nbsp;护色洗衣液2kg袋装</a></dd>
+    <dd class="color_red">￥69.90</dd>
+    <hr class="hr">
+    <dt><a href="#"><img src="images/products/p005.jpg"></a></dt>
+    <dd><a href="#">威露士（Walch）2kg+2kg洗衣液</a></dd>
+    <dd>有氧洗）特惠双袋组合袋</dd>
+    <dd class="color_red">￥39.90</dd>
+  </dl>
+  <dl class="ranking">
+    <p class="ptop">衣物清洁排行榜</p>
+    <div class="floatleft floatleft1_1">
+      <p>同价位</p>
+      <div class="rankinglist1 clearfix">
+        <dl >
+          <dt class="i_number">1</dt>
+          <dt><img src="images/products/product-s4.jpg"></dt>
+          <dd><a href="#">卫新洗衣液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_number">2</dt>
+          <dt><img src="images/products/product-s4.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_number">3</dt>
+          <dt><img src="images/products/product-s3.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_numberlast">4</dt>
+          <dt><img src="images/products/product-s3.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="floatleft floatleft_1">
+      <p >同品牌</p>
+      <div class="rankinglist clearfix">
+        <dl >
+          <dt class="i_number">1</dt>
+          <dt><img src="images/products/product-s4.jpg"></dt>
+          <dd><a href="#">卫新洗衣液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_number">2</dt>
+          <dt><img src="images/products/product-s5.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_number">3</dt>
+          <dt><img src="images/products/product-s6.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_numberlast">4</dt>
+          <dt><img src="images/products/product-s7.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="floatleft floatleft2_1">
+      <p >同类别</p>
+      <div class="rankinglist2 clearfix">
+        <dl >
+          <dt class="i_number">1</dt>
+          <dt><img src="images/products/product-s4.jpg"></dt>
+          <dd><a href="#">卫新洗衣液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_number">2</dt>
+          <dt><img src="images/products/product-s5.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_number">3</dt>
+          <dt><img src="images/products/product-s6.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+        <hr class="hr5 clearfix">
+        <dl>
+          <dt class="i_numberlast">4</dt>
+          <dt><img src="images/products/product-s7.jpg"></dt>
+          <dd><a href="#">卫新消毒液</a></dd>
+          <dd>&nbsp;</dd>
+          <dd class="color_red">￥39.90</dd>
+        </dl>
+      </div>
+    </div>
+    <!--动态下拉表-->
+  </dl>
+  <dl class="haigoumai clearfix">
+    <p class="ptop">购买了该商品的用户还购买了
+      </h3>
+    <dt><img src="images/products/p001.jpg"></dt>
+    <dt><a href="#">卫新&nbsp;护色洗衣液2kg袋装</a>
+      </dd>
+    <dd class="color_red">￥22.90</dd>
+    <dt><img src="images/products/p002.jpg"></dt>
+    <dd><a href="#">卫新&nbsp;护色洗衣液2kg袋装</a></dd>
+    <dt class="color_red">￥39.90</dt>
+    <dt><a href="#"><img src="images/products/p004.jpg"></a></dt>
+    <dd><a href="#">卫新&nbsp;护色洗衣液2kg袋装</a></dd>
+    <dd class="color_red">￥69.90</dd>
+    <dt><a href="#"><img src="images/products/p005.jpg"></a></dt>
+    <dd><a href="#">威露士（Walch）2kg+2kg洗衣液</a></dd>
+    <dd>有氧洗）特惠双袋组合袋</dd>
+    <dd class="color_red">￥39.90</dd>
+  </dl>
+  <dl class="products_bottom">
+    <dt><a href="#"><img src="images/products/left_p001.jpg"></a></dt>
+    <dt><a href="#"><img src="images/products/left_p002.jpg"></a></dt>
+    <dt><a href="#"><img src="images/products/left_p003.jpg"></a></dt>
+  </dl>
+</aside>
+<main>
+<div class="main1">
+  <p  class="mainptop"><a href="#">优惠套装</a></p>
+  <div class="taozhuang">
+    <p class="bold">&nbsp;&nbsp;&nbsp;&nbsp;优惠套装1</p>
+    <dl>
+      <dt> <img src="images/products/product_01_m.jpg"> </dt>
+      <dd><a href="#">卫新&nbsp;熏衣草洗衣液42.6kg</a></dd>
+    </dl>
+    <dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+    <dl>
+      <dt> <img src="images/products/product_02_m.jpg"> </dt>
+      <dd><a href="#">卫新&nbsp;去静电柔顺剂&nbsp;清怡樱花袋装500</a></dd>
+    </dl>
+    <dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+    <dl>
+      <dt> <img src="images/products/product_03_m.jpg"> </dt>
+      <dd><a href="#">威露士（Walch）手洗洗衣液单袋装500ml</a></dd>
+    </dl>
+    <dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+    <dl>
+      <dd><img src="images/products/product_04_m.jpg"> </dd>
+      <dt><a href="#">威露士（Walch）衣物家居消毒液3</a></dt>
+    </dl>
+    <dl>
+      &nbsp;
+    </dl>
+    <dl class="taozhuangright">
+      <span class="denghao"></span>
+      <dd class="bold">威露士组合</dd>
+      <dd>&nbsp;</dd>
+      <dd>套装价：<b class="color_red">105.30</b></dd>
+      <dd>京东价：<s><b>143.40</b></s></dd>
+      <dd>立即节省：<b>37.10</b></dd>
+      <dd>
+        <input type="submit" name="" value="购买套装">
+      </dd>
+    </dl>
+  </div>
+</div>
+<!-- 头部第一个结束 -->
+<div class="tuijianbox">
+<div class="tuijiansmallbox">
+<div class="tuijian">
+    <span style="font-size:14px;color:red;text-align:center;margin-left:14px;">推荐配件</span>
+	<div class="tuijian1">
+          <ul>
+          <li><a href="#">全部配件</a><span>|</span></li>
+          <li><a href="#">清洁工具（1）</a><span>|</span></li>
+          <li><a href="#">毛巾浴巾（3）</a><span>|</span></li>
+          <li><a href="#">衬衫（1）</a><span>|</span></li>
+          <li><a href="#">收纳用品（2）</a><span>|</span></li>
+          <li><a href="#">商务男袜（1）</a></li>
+        </ul>
+    </div>
+    <div class="tuijianxiangqing">
+		<dl>
+          <dt><img src="images/products/product_01_m.jpg"> </dt>
+          <dd><a href="#">卫新&nbsp;熏衣草洗衣液42.6kg</a></dd>
+        </dl>
+        <dl class="plusbox">
+              <dt class="plus"></dt>
+            </dl>
+            <!-- 	有下滑选项的列表 -->
+            
+<div class="selectlist">
+<div style=" width:1000px">
+<dl>
+  <dt><img src="images/products/product_05_m.jpg"> </dt>
+  <dd><a href="#">卫新&nbsp;去静电柔顺剂&nbsp;清怡樱花袋装500</a></dd>
+  <dd>
+    <input type="checkbox" name="">
+    <span>￥49.00</span>
+  </dd>
+</dl>
+<dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+<dl>
+  <dt><img src="images/products/product_06_m.jpg"> </dt>
+  <dd><a href="#">百佳Hommy9丝压缩袋（2大2中4小）</a></dd>
+  <dd>
+    <input type="checkbox" name="">
+    <span>￥49.00</span>
+  </dd>
+</dl>
+<dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+    
+<dl>
+  <dt><img src="images/products/product_07_m.jpg"> </dt>
+  <dd><a href="#">【京东自营】</a></dd>
+  <dd>INTERIGHT&NBSP;100支全棉</dd>
+  <dd>
+    <input type="checkbox" name="">
+    <span>￥49.00</span>
+   
+  </dd>
+</dl>
+<dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+<dl>
+  <dt><img src="images/products/product_08_m.jpg"> </dt>
+  <dd><a href="#">【京东自营】</a></dd>
+  <dd>INTERIGHT商务休闲男袜&nbsp;精梳棉中</dd>
+  <dd>
+    <input type="checkbox" name="">
+    <span>￥49.00</span>
+  </dd>
+  </dl>
+  <dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+ <dl>
+  <dt><img src="images/products/product_05_m.jpg"> </dt>
+  <dd><a href="#">卫新&nbsp;去静电柔顺剂&nbsp;清怡樱花袋装500</a></dd>
+  <dd>
+    <input type="checkbox" name="">
+    <span>￥49.00</span>
+  
+  </dd>
+</dl>
+<dl class="plusbox">
+      <dt class="plus"></dt>
+    </dl>
+<dl>
+  <dt><img src="images/products/product_07_m.jpg"> </dt>
+  <dd><a href="#">卫新&nbsp;去静电柔顺剂&nbsp;清怡樱花袋装500</a></dd>
+  <dd>
+    <input type="checkbox" name="">
+    <span>￥49.00</span>
+  
+  </dd>
+</dl>
+  </div>
+  </div>
+  <dl class="tuijianright">
+  <span class="denghao"></span>
+  <dd>&nbsp;</dd>
+      <dd class="bold">已选择0个配件</dd>
+  <dd>搭配价：<span class="color_red">39.90</span></dd>
+  <dd>获得优惠：<s><b>36.60</b></s></dd>
+  <dd>
+        <input type="submit" name="buy" value="立即购买">
+      </dd>
+</dl>  
+   </div> 
+</div>
+<!-- 第一个配件盒子 -->
+<div class="renqi">人气组合</div>
+<!-- 第二个盒子配件结束 -->
+</div><!--小盒子结束-->
+</div>
+<div class="clearfix jieshao">
+<div class="jieshaobox">
+  <div class="shangpinjieshao"><span>商品介绍</span>
+ 
+  </div>
+  <!-- 介绍结束 -->
+  <div><span>规格参数</span></div>
+  <!-- 规格参数结束 -->
+  <div><span>包装清单</span></div>
+  <!-- 清单end -->
+  <div><span>商品评价（43390）</span></div>
+  <!--评价 end -->
+  <div><span>售后保障</span></div>
+  <!-- 售后end --> 
+  <div class="jieshaoright"><input type="button" name=""></div>
+</div>
+ <ul class="shangpinjieshao_ul clearfix">
+      <li>商品名称：卫新洗衣液</li>
+      <li>商品编号：1039778 </li>
+      <li>品牌:卫新</li>
+      <li>上架时间：2014-01-23&nbsp;16:28:06</li>
+      <li>商品毛重：4.55kg</li>
+      <li>商品产地：广东省从化市</li>
+      <li>类别：手洗洗衣液，机洗洗衣液</li>
+      <li>规格：3kg以上</li>
+      <li>香型：香味</li>
+    </ul>
+</div>
+
+<!-- 商品介绍 结束-->
+<p class="clearfix" style="margin:10px 0;"><span style="background:url(images/iconlist_1.png) no-repeat -261px -270px;width:17px;height:16px;padding-left:30px;"></span>如果您发现商品信息不准确，<span class="bule">欢迎纠错</span></p>
+<div class="fieldset">
+	
+  <img src="images/products/weilushi.jpg" alt="">
+  <hr class="hr5">
+  	
+    <div class="legend">
+    <p><span class="font20">产品信息&nbsp;&nbsp;</span>Product Information</p>
+    </div>
+
+  <div class="jieshi"><img src="images/products/product_01.jpg">
+    <ol>
+      <li>卫新&nbsp;薰衣草洗衣液（新老包装&nbsp;随机发货）</li>
+      <li>&nbsp;</li>
+      <li>净含量：4.26kg</li>
+      <li>产品特效：</li>
+      <li>1.特别添加法国薰衣草精油成分，令衣物充满芬芳。</li>
+      <li>2.纳米智能分解技术，深层渗透衣物纤维，自动逐一瓦解各种顽固污渍及</li>
+      <li>细菌，不损衣物纤维，净白亮色。</li>
+      <li>3.特有去渍防护配方，减少污渍吸附在衣物表面，穿着时持久洁净更耐脏。</li>
+      <li>4.中性配方，成分更温和，温柔呵护家人皮肤。</li>
+      <li>5.全新低泡技术，用量少，易漂无残留。</li>
+      <li>6.含柔顺成分，令衣物恢复天然弹性不易变形，易熨更柔顺。</li>
+      <li>7.环保跟健康，不含磷，荧光增白剂。</li>
+      <li>箱柜：4支/箱</li>
+        <li>&nbsp;</li>
+      <li>更多容量选择：3kg&nbsp;4.6kg</li>
+    </ol>
+  </div>
+  <!-- 产品信息结束 --> 
+  <!-- 产品特色 -->
+   <hr class="hr5 clearfix"	>
+  	
+    <div class="legend">
+    <p><span class="font20">产品特色&nbsp;&nbsp;</span>Selling Point</p>
+    </div>
+  <div><img src="images/products/product_02.jpg"></div>
+  <!-- 小女孩图片 -->
+   <hr class="hr5 clearfix"	>
+  <div><img src="images/products/product_03.jpg">薰衣草</div>
+   <hr class="hr5 clearfix"	>
+  	
+    <div class="legend">
+    <p><span class="font20">使用范围&nbsp;&nbsp;</span>Heritage</span></p>
+    </div>
+  <div><img src="images/products/product_04.jpg"></div>
+  <div class="legend">
+    <p><span class="font20">使用说明 &nbsp;&nbsp;</span>Instructions</span></p>
+    </div>
+  <div> <img src="images/products/product_05.jpg"></div>
+  <div class="legend">
+    <p><span class="font20">品牌介绍&nbsp;&nbsp;Brand&nbsp;</span>Introduction</span></p>
+    </div>
+    <div class="shangbiao">
+    <img src="images/products/weilushi_01.jpg">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><b>威莱为你每一天，未来健康每一天</b></p>
+    <p>&nbsp;</p>
+    <p>威莱集团是家用清洁及卫生消毒产品市场的领导者，在多个国家及地区，其消毒产品均占有领先的市场地位。</p>
+  </div>
+</div>
+<hr class="hr5 clearfix">
+<div >
+  <p style="margin:10px 0;"><b>服务承诺：</b></p>
+  <p>京东向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。凭质保证书及京东发票，可享受全国联保服务（奢侈品，钟表除外：奢侈品，钟表由京东联系保修，享有法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东还为您提供具有竞争力的商品价格和<a href="#">运费政策</a>，请您放心购买！</p>
+  <p>&nbsp;</p>
+  <p>注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</p>
+</div>
+<!-- 承诺上下边框 -->
+<hr class="hr5">
+<div class="quanli">
+  <p><span class="color_red">权利声明:</span></p>
+  <p>京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。</p>
+  <p><b>注</b>：本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。</p>
+</div>
+<div class="shangpinpingjia">
+  <p>商品评价</p>
+  <dl class="dl1">
+  	<dd><span style="font-size:36px; font-weight:bold; color:#E4393C;">97</span><sub style="font-size:26px; font-weight:inherit; color:#E4393C;">%</sub></dd>
+    <dd>好评度</dd>
+  </dl>
+ 	
+   <dl class="dl2">
+   	 	
+                <dd>好评（97%):&nbsp;<progress max="100" value="97"></progress>
+     			<!--<meter max="100" value="97"></meter>--></dd>
+                <dd>中评（2%)&nbsp;&nbsp;:&nbsp;<progress max="100" value="2"></progress>
+     			<!--<meter max="100" value="2"></meter>--></dd>
+                <dd>差评（1%)&nbsp;&nbsp;:&nbsp;<progress max="100" value="1"></progress>
+     			<!--<meter max="100" value="1">--></meter></dd>
+   </dl>
+    <dl class="dl3">
+    	<p>买家印象：</p>
+        <dd>比超市便宜（8450）</dd>
+        <dd>味道不错（6931）</dd>
+        <dd>质量不错（5034）</dd>
+        <dd>洗衣效果好（5003）</dd>
+        <dd>洗涤效果好（4834）</dd>
+        <dd>洗衣服干净（4712）</dd>
+    </dl>
+    <dl class="dl4">
+    	<dd>您可对已购商品进行评价</dd>
+        <dd><input type="button" value="发评价拿京豆"></dd>
+        <dd><span class="color_red">前五名可或双倍京豆></span><span class="bule">[规则]</span></dd>
+    </dl>
+ </div>   
+ <div class="clearfix pingjia">
+ 	<div>全部评价（49639）</div>
+    <div>好评（48232）</div>
+    <div>中评（992）</div>
+  <div>差评（415）</div>
+  <div>有晒单的评价（962)</div>
+ </div>
+ 	<div class="userping">
+    	<dl>
+        	<dt><img  src="images/user_01.jpg" ></dt>
+            <dd>kkngj2008</dd>
+            <dd>
+            	<span style="color:#088000">金牌会员</span>广东
+            </dd>
+        </dl>
+        <p style="border-bottom:1px solid #ddd;;"><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_c2.png"></a><a><img src="images/star_c2.png"></a>
+        	<span style="float:right">2014-08-12&nbsp;19:01</span>
+        </p>
+        <p style="margin-top:10px;">&nbsp;&nbsp;标签：<span style="background:#FDEDD2; display:inline-block;">比洗衣粉好</span>&nbsp;&nbsp; <span style="background:#FDEDD2; display:inline-block;">去污能力强</span></p>
+         <p>&nbsp;&nbsp;心得：味道清香.价格也比较公道</p>
+         <div class="imgmiddle">用户晒单：<img src="images/products/show_01.jpg"><img src="images/products/show_02.jpg"><img src="images/products/show_03.jpg"><span style="vertical-align:">共3张图片<a href="#" style="color:#3600D9;">查看晒单&gt;</a></span></div>
+        <p>&nbsp;</p>
+        <p>购买日期：2014-08-11</p>
+     <div style="float:right; "><input type="button" style="background:#F9F9F9; width:60px;height:27px; line-height:27px; text-align:center;" value="有用（3）">
+  &nbsp;&nbsp; <input type="button" style="background:#F9F9F9; width:60px; height:27px; line-height:27px; text-align:center;"  value="回复（0）"></div> 
+    <p>
+      <hr class="hr5">
+    	<span style="font-size:22px; font-weight:bold;">22</span>
+        Koolmeng回复SE7EN_Gary:&nbsp;牛也没那么厉害！你真牛
+    </p>
+    <p>2014-12-16&nbsp;15:09<span style="color:#00C;float:right; margin-right:40px;">回复</span></p>
+    	  <hr class="hr5">  
+    	<p>
+    	<span style="font-size:22px; font-weight:bold;">21</span>
+        Koolmeng回复SE7EN_Gary:&nbsp;牛也没那么厉害！你真牛
+    </p>
+    <p>2014-12-16&nbsp;15:09<span style="color:#00C;float:right; margin-right:40px;">回复</span></p>
+    </div>
+ <div class="userping">
+    	<dl>
+        	<dt><img  src="images/user_01.jpg" ></dt>
+            <dd>kkngj2008</dd>
+            <dd>
+            	<span style="color:#088000">金牌会员</span>广东
+            </dd>
+        </dl>
+        <p style="border-bottom:1px solid #ddd;"><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_c2.png"></a>
+        	<span style="float:right">2014-08-12&nbsp;19:01</span>
+        </p>
+        <p style="margin-top:10px;">&nbsp;&nbsp;标签：<span style="background:#FDEDD2; display:inline-block;">比洗衣粉好</span>&nbsp;&nbsp; <span style="background:#FDEDD2; display:inline-block;">去污能力强</span></p>
+         <p>&nbsp;&nbsp;心得：味道清香.价格也比较公道</p>
+         <p class="imgmiddle">用户晒单：<img src="images/products/show_01.jpg"><img src="images/products/show_02.jpg"><img src="images/products/show_03.jpg"><span style="vertical-align:">共3张图片<a href="#" style="color:#3600D9;">查看晒单&gt;</a></span></p>
+    	<div style="height:60px;"></div>
+        <p>&nbsp;</p>
+        <p class="clearfix">购买日期：2014-08-11</p>
+     <div style="float:right; "><input type="button" style="background:#F9F9F9; width:60px;height:27px; line-height:27px; text-align:center;" value="有用（3）">
+  &nbsp;&nbsp; <input type="button" style="background:#F9F9F9; width:60px; height:27px; line-height:27px; text-align:center;"  value="回复（0）"></div>
+   	<p>
+    <hr class="hr5">
+    	<span style="font-size:22px; font-weight:bold;">22</span>
+        Koolmeng回复SE7EN_Gary:&nbsp;牛也没那么厉害！你真牛
+    </p>
+    <p>2014-12-16&nbsp;15:09<span style="color:#00C;float:right; margin-right:40px;">回复</span></p>
+    	<p>
+         <hr class="hr5">  
+    	<span style="font-size:22px; font-weight:bold;">21</span>
+        Koolmeng回复SE7EN_Gary:&nbsp;牛也没那么厉害！你真牛
+    </p>
+    <p>2014-12-16&nbsp;15:09<span style="color:#00C;float:right; margin-right:40px;">回复</span></p>
+    </div>
+ <div class="userping">
+    	<dl>
+        	<dt><img  src="images/user_01.jpg" ></dt>
+            <dd>kkngj2008</dd>
+            <dd>
+            	<span style="color:#088000">金牌会员</span>广东
+            </dd>
+        </dl>
+        <p style="border-bottom:1px solid #ddd;"><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a><a><img src="images/star_button.fw.png"></a>
+        	<span style="float:right">2014-08-12&nbsp;19:01</span>
+        </p>
+        <p style="margin-top:10px;">&nbsp;&nbsp;标签：<span style="background:#FDEDD2; display:inline-block;">比洗衣粉好</span>&nbsp;&nbsp; <span style="background:#FDEDD2; display:inline-block;">去污能力强</span></p>
+         <p>&nbsp;&nbsp;心得：味道清香.价格也比较公道</p>
+         <p class="imgmiddle">用户晒单：<img src="images/products/show_01.jpg"><img src="images/products/show_02.jpg"><img src="images/products/show_03.jpg"><span style="vertical-align:">共3张图片<a href="#" style="color:#3600D9;">查看晒单&gt;</a></span></p>
+    	<div style="height:60px;"></div>
+        <p>&nbsp;>
+        <p class="clearfix">购买日期：2014-08-11</p>
+     <div style="float:right; "><input type="button" style="background:#F9F9F9; width:60px;height:27px; line-height:27px; text-align:center;" value="有用（3）">
+  &nbsp;&nbsp; <input type="button" style="background:#F9F9F9; width:60px; height:27px; line-height:27px; text-align:center;"  value="回复（0）"></div>
+   	<p>
+    <hr class="hr5">
+    	<span style="font-size:22px; font-weight:bold;">22</span>
+        Koolmeng回复SE7EN_Gary:&nbsp;牛也没那么厉害！你真牛
+    </p>
+    <p>2014-12-16&nbsp;15:09<span style="color:#00C;float:right; margin-right:40px;">回复</span></p>
+    	<p>
+         <hr class="hr5">  
+    	<span style="font-size:22px; font-weight:bold;">21</span>
+        Koolmeng回复SE7EN_Gary:&nbsp;牛也没那么厉害！你真牛
+    </p>
+    <p>2014-12-16&nbsp;15:09<span style="color:#00C;float:right; margin-right:40px;">回复</span></p>
+    </div>
+  <div class="clearfix">
+    <p><span ><a href="#" style="color:#00C">[查看全部评价]</a></span></p>
+    <div class="butn">
+    	<a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">...</a>
+        <a href="#">3421</a><a href="#">下一页</a>
+    </div>   
+  </div>
+<!-- 评价信息 --> 
+<!-- 全部购买查询 -->
+<div class="clearfix"></div>
+<div  class="clearfix zixun">
+  <div> 全部购买咨询 </div>
+  <div>商品咨询</div>
+  <div>库存配送</div>
+ 	<div>支付</div>
+    <div>发票保修</div>
+    <div>支付帮助</div>
+    <div>配送帮助</div>
+    <div>常见问题</div>
+    <div><input type="text" value="请输入关键词" style="width:130px;"><input type="submit" value="搜索" style="width:50px;">  </div>
+    <div class="fabiaozixun"><input type="button" value="发表咨询" style="color:#FFF; background:#E03437;"></div>
+    </div>
+   <div class="zixunbottom">
+   	<b>温馨提示：</b>因厂家更改产品包装，产地或更换随机附件等没有提前通知，且每位咨询者购买情况，提问时间等不同，为此以下回复仅对提问者3天内有效，其他网友仅供参考！
+    若由此给您带来不便请多多谅解，谢谢！
+   </div>
+</div>
+</main>
+</div>
+<!--盒子结束-->
+<footer class="clearfix">
+<div class="footertop">	
+  <dl class="footerdl">
+    <dd><img src="images/gw01.jpg"></dd>
+    <dt><a href="#">购物指南</a></dt>
+    <dt><a href="#">购物流程</a></dt>
+    <dt><a href="#">会员介绍</a></dt>
+    <dt><a href="#">团购机票</a></dt>
+    <dt><a href="#">常见问题</a></dt>
+    <dt><a href="#">大家电</a></dt>
+    <dt><a href="#">联系客服</a></dt>
+  </dl>
+  <dl class="footerdl">
+    <dd><img src="images/ps02.jpg"></dd>
+    <dt><a href="#">配送方式</a></dt>
+    <dt><a href="#">上门自提</a></dt>
+    <dt><a href="#">211限时达</a></dt>
+    <dt><a href="#">配送服务查询</a></dt>
+    <dt><a href="#">配送费收取标准</a></dt>
+    <dt><a href="#">海外配送</a></dt>
+  </dl>
+  <dl class="footerdl">
+    <dd><img src="images/zf03.jpg"></dd>
+    <dt><a href="#">支付方式</a></dt>
+    <dt><a href="#">货到付款</a></dt>
+    <dt><a href="#">在线支付</a></dt>
+    <dt><a href="#">分期付款</a></dt>
+    <dt><a href="#">邮局汇款</a></dt>
+    <dt><a href="#">公司转账</a></dt>
+  </dl>
+  <dl class="footerdl">
+    <dd><img src="images/sh04.jpg"></dd>
+    <dt><a href="#">售后服务</a></dt>
+    <dt><a href="#">售后政策</a></dt>
+    <dt><a href="#">价格保护</a></dt>
+    <dt><a href="#">退款说明</a></dt>
+    <dt><a href="#">返修/退换货</a></dt>
+    <dt><a href="#">取消订单</a></dt>
+  </dl>
+  <dl class="footerdl">
+    <dd><img src="images/ts05.jpg"></dd>
+    <dt><a href="#">特色服务</a></dt>
+    <dt><a href="#">夺宝岛</a></dt>
+    <dt><a href="#">DIY装机</a></dt>
+    <dt><a href="#">延保服务</a></dt>
+    <dt><a href="#">京东E卡</a></dt>
+    <dt><a href="#">节能补贴</a></dt>
+    <dt><a href="#">京东通信</a></dt>
+  </dl>
+</div>
+	<div  class=" clearfix footerbottom">
+    	<p>关于我们<span>|</span>联系我们<span>|</span>商家入驻<span>|</span>营销中心<span>|</span>手机京东<span>|</span>友情链接<span>|</span>销售联盟<span>|</span>京东社区<span>|</span>京东公益<span>|</span>English Site<span>|</span>Contact Us </p>
+        <p>&nbsp;</p>
+<p>北京市公安局朝阳分局备案编号110105014669<span>|</span>  京ICP证070<span>|</span>互联网药品信息服务资格证编号(京)-经营性-2014-0008<span>|</span>新出发京零 字第大120007号</p>
+<p>音像制品经营许可证苏宿批005号  <span>|</span>出版物经营许可证编号新出发(苏)批字第N-012号<span>|</span>互联网出版许可证编号新出网证(京)字150号</p>
+<p>网络文化经营许可证京网文[2014]2148-348号  违法和不良信息举报电话：4006561155  Copyright&copy;2004-2016  京东JD.com 版权所有</p>
+<p>京东旗下网站：京东钱包 经营性网站备案中心  可信网站  网络警察  </p> 
+	<div class="footerimg"><img src="images/jy.jpg"><img src="images/kx.jpg"><img src="images/cy.jpg"  ><img src="images/cx.jpg"></div>
+    </div>
+</footer>
+<div class="home">	
+	<p><a class="home1">调查问卷</a></p>
+   	<p> <a href="#" class="home2">返回顶部</a></p>
+</div>
+</body>
+</html>
